@@ -1,0 +1,23 @@
+{
+  "name": "snu_graduate",
+  "version": "1.0.0",
+  "description": "blue SNU man",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "author": "lsy",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^3.0.2",
+    "regenerator-runtime": "^0.13.9",
+    "socket.io": "^4.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/node": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "nodemon": "^2.0.13"
+  }
+}

@@ -9,11 +9,16 @@ html(lang="en")
     body
         header
             h1 Hi
-            div#img_container
-              img#img_shower(width = "800px")
-            div#btn_container
-              button(onclick = "getRandomImage()") press
         main
+            form
+              input(type="text", placeholder="text...", required)
+              button Enter
+            a(href="/show")
+              button go to show
+        p#xPosition ds
+        br
+        p#yPosition ds
         script(src="/socket.io/socket.io.js")      
         script(src="/public/js/app.js")
-        script(src="/public/js/showImage.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js", integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g==" ,crossorigin="anonymous", referrerpolicy="no-referrer")
+        script(src="/public/js/move.js") 

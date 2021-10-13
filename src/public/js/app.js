@@ -1,3 +1,5 @@
+import "../scss/styles.scss";
+
 const socket = io();
 
 const form = document.querySelector("form");

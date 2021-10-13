@@ -3,24 +3,29 @@
   "version": "1.0.0",
   "description": "blue SNU man",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "assets": "webpack --mode=development -w"
   },
   "author": "lsy",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
+    "imagemin": "^8.0.1",
     "morgan": "^1.10.0",
     "pug": "^3.0.2",
     "regenerator-runtime": "^0.13.9",
-    "socket.io": "^4.2.0",
-    "zingtouch": "^1.0.6"
+    "socket.io": "^4.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.8",
     "@babel/node": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
-    "nodemon": "^2.0.13"
-  },
-  "type": "module"
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.4.0",
+    "mini-css-extract-plugin": "^2.4.2",
+    "nodemon": "^2.0.13",
+    "sass-loader": "^12.2.0",
+    "webpack-cli": "^4.9.0"
+  }
 }

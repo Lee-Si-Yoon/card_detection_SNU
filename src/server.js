@@ -11,14 +11,13 @@ const logger = morgan("dev");
 app.set("view engine", "pug");
 app.set("views", process.cwd() + "/src" + "/views");
 app.use(logger);
-app.use("/public", express.static(process.cwd() + "/src" + "/public"));
+//app.use("/public", express.static(process.cwd() + "/src" + "/public"));
+app.use("/assets", express.static("assets"));
 app.get("/", (_, res) => res.render("home"));
 app.get("/show", (_, res) => res.render("show"));
 
 const httpServer = http.createServer(app);
 const wsServer = new Server(httpServer);
-
-function noop() {} //noop is nothing
 
 wsServer.on("connection", (socket) => {
   socket.onAny((event) => {

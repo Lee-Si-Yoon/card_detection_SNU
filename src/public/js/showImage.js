@@ -3,9 +3,9 @@ const room = document.querySelector("#room");
 const btn_container = document.querySelector("#btn_container");
 const btn = btn_container.querySelector("button");
 
-import img1 from "../imgs/1.jpg";
-import img2 from "../imgs/2.jpg";
-import img3 from "../imgs/3.jpg";
+import img1 from "../../../assets/imgs/1.jpg";
+import img2 from "../../../assets/imgs/2.jpg";
+import img3 from "../../../assets/imgs/3.jpg";
 
 const image_array = [img1, img2, img3];
 
@@ -14,6 +14,7 @@ function getRandomImage() {
   const selected_image = image_array[random_index];
   //console.log(selected_image);
   document.getElementById("img_shower").src = selected_image;
+  //document.getElementById("img_shower").style.display = "none";
 }
 
 function addMessage(message) {

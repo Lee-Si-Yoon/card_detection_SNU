@@ -3,9 +3,9 @@ const room = document.querySelector("#room");
 const btn_container = document.querySelector("#btn_container");
 const btn = btn_container.querySelector("button");
 
-import img1 from "../../../assets/imgs/1.jpg";
-import img2 from "../../../assets/imgs/2.jpg";
-import img3 from "../../../assets/imgs/3.jpg";
+import img1 from "../imgs/1.jpg"; // ../../../assets/imgs/1.jpg
+import img2 from "../imgs/1.jpg";
+import img3 from "../imgs/1.jpg";
 
 const image_array = [img1, img2, img3];
 

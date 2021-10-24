@@ -32,3 +32,4 @@ socket.on("show_message", addMessage);
 socket.on("hitted", (h) => {
   addMessage(h);
 });
+socket.on("showBtnHit", getRandomImage);

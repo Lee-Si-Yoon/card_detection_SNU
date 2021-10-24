@@ -4,21 +4,25 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Noom
+        title Noom | home
         link(rel="stylesheet", href="https://unpkg.com/mvp.css")
     body
         header
             h1 Hi
         main
-            form
-              input(type="text", placeholder="text...", required)
-              button Enter
+            form(method="POST")
+                input(placeholder="name", name = "name", type="text", required)
+                input(type="submit", value = "enter")
+            a(href="#")
+                button#showBtn press
+            br
             a(href="/show")
-              button go to show
-        p#xPosition ds
-        br
-        p#yPosition ds
+                button go to show
+        include partials/footer
+        //-p#xPosition ds
+        //-br
+        //-p#yPosition ds
         script(src="/socket.io/socket.io.js")      
         script(src="/assets/js/app.js")
-        script(src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js", integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g==" ,crossorigin="anonymous", referrerpolicy="no-referrer")
-        script(src="/assets/js/move.js") 
+        //-script(src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js", integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g==" ,crossorigin="anonymous", referrerpolicy="no-referrer")
+        //-script(src="/assets/js/move.js") 

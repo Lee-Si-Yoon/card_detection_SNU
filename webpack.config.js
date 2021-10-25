@@ -6,8 +6,10 @@ const BASE_JS = "./src/public/js/";
 module.exports = {
   entry: {
     app: BASE_JS + "app.js",
-    move: BASE_JS + "move.js",
+    //move: BASE_JS + "move.js",
     showImage: BASE_JS + "showImage.js",
+    home: BASE_JS + "home.js",
+    cert: BASE_JS + "cert.js",
   },
   //mode: "development", //only on dev mode
   //watch: true, //only on dev mode

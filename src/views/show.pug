@@ -1,26 +1,12 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Noom | show
-        link(rel="stylesheet", href="https://unpkg.com/mvp.css")
-    body
-        header
-            h1 show
-        main
-            div#img_container
-                img#img_shower(width = "800px")
-            div#btn_container
-                button press
-            div#room
-                form
-                  ul
-        a(href="../")
-            button go to home
-        
-        script(src="/socket.io/socket.io.js")      
-        script(src="/assets/js/showImage.js")
-        
-            
+extends base
+
+block content
+    div#img_container
+        img#img_shower(width = "800px")
+    div#btn_container
+        button press
+    a(href="../")
+        button go to home
+    
+    include partials/socket
+    script(src="/assets/js/showImage.js")

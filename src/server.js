@@ -3,6 +3,7 @@ import morgan from "morgan";
 import http from "http";
 import path from "path";
 import { Server } from "socket.io";
+import { instrument } from "@socket.io/admin-ui";
 import { resolveAny } from "dns";
 
 const __dirname = path.resolve();
@@ -10,7 +11,8 @@ const app = express();
 const logger = morgan("dev");
 
 const getHome = (req, res) => {
-  return res.render("home");
+  const pageTitle = "Home";
+  return res.render("home", { pageTitle: "Home" });
 };
 const postHome = (req, res) => {
   const { name } = req.body;
@@ -22,15 +24,22 @@ app.set("view engine", "pug");
 app.set("views", process.cwd() + "/src" + "/views");
 app.use(logger);
 app.use(express.urlencoded({ extended: true }));
-//app.use("/public", express.static(process.cwd() + "/src" + "/public"));
 app.use("/assets", express.static("assets"));
-//app.get("/", (_, res) => res.render("home"));
+
 app.route("/").get(getHome).post(postHome);
-app.get("/show", (_, res) => res.render("show"));
-app.get("/cert", (_, res) => res.render("cert"));
+app.get("/show", (_, res) => res.render("show", { pageTitle: "Show" }));
+app.get("/cert", (_, res) => res.render("cert", { pageTitle: "Cert" }));
 
 const httpServer = http.createServer(app);
-const wsServer = new Server(httpServer);
+const wsServer = new Server(httpServer, {
+  cors: {
+    origin: ["https://admin.socket.io"], //paste localhost:3000/admin to url
+    credentials: true,
+  },
+});
+instrument(wsServer, {
+  auth: false,
+});
 
 wsServer.on("connection", (socket) => {
   socket.onAny((event) => {
@@ -39,13 +48,9 @@ wsServer.on("connection", (socket) => {
   socket.on("show_btn", () => {
     wsServer.sockets.emit("showBtnHit");
   });
-  socket.on("new_message", (msg, dest) => {
+  socket.on("new_message", (msg) => {
     wsServer.sockets.emit("show_message", msg);
-    //global.location.href = dest;
   });
-  //socket.on("hit", () => {
-  //  wsServer.sockets.emit("hitted", "hit!");
-  //});
 });
 
 const port = 4000;

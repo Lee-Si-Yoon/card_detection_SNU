@@ -1,19 +1,14 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Noom | cert
-        link(rel="stylesheet", href="https://unpkg.com/mvp.css")
-    body
-        header
-            h1 Cert
-        main
-            a(href="#")
-                button#showBtn press
-            br
-            a(href="/")
-                button go back
-        script(src="/socket.io/socket.io.js")      
-        script(src="/assets/js/app.js")
+extends base
+
+block content
+    div#room
+        form
+            ul
+    a(href="#")
+        button#showBtn press
+    br
+    a(href="/")
+        button go back 
+
+    include partials/socket
+    script(src="/assets/js/cert.js")

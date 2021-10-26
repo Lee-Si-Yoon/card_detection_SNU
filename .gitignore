@@ -72,5 +72,4 @@ build/
 #
 package-lock.json
 yarn.lock
-yehwa.js
-move.js
+/build

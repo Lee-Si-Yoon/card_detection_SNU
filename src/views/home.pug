@@ -1,16 +1,18 @@
 extends base
 
 block content
-    form(method="POST")
-        input(placeholder="name", name = "name", type="text", required)
-        input(type="submit", value = "enter")
-    a(href="")
-        button#showBtn press
-    br
-    a(href="/show")
-        button go to show
-    a(href="/cert")
-        button go to cert
+    section.intro
+        form(method="POST")
+            input(placeholder="name", name = "name", type="text", required)
+            input(type="submit", value = "enter")
+        a(href="")
+            button#showBtn press
+        br
+        a(href="/show")
+            button go to show
+        a(href="/cert")
+            button go to cert
 
     include partials/socket
     script(src="/assets/js/home.js")
+    script(src="/assets/js/generate.js")

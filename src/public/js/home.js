@@ -1,4 +1,5 @@
 const socket = io();
+
 const form = document.querySelector("form");
 const showBtn = document.querySelector("#showBtn");
 

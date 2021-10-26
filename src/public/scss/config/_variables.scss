@@ -1,1 +1,13 @@
-//display: hidden;
+.hide {
+  display: hidden;
+  color: aqua;
+}
+
+.blur {
+  filter: blur(10px);
+  transition: all 1s;
+}
+
+.noBlur {
+  transition: all 1s;
+}

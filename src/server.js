@@ -1,3 +1,4 @@
+import "regenerator-runtime";
 import express from "express";
 import morgan from "morgan";
 import http from "http";

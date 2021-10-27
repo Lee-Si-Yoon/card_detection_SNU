@@ -23,18 +23,18 @@ const getHome = (req, res) => {
   const pageTitle = "Home";
   return res.render("home", { pageTitle: "Home" });
 };
+
 const postHome = async (req, res) => {
   const { name } = req.body;
   try {
     await Graduate.create({
       name: name,
     });
+    return res.redirect("/cert");
   } catch (error) {
     console.log(error);
     return res.redirect("/");
   }
-
-  return res.redirect("/cert");
 };
 
 app.set("view engine", "pug");

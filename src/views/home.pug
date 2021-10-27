@@ -2,16 +2,9 @@ extends base
 
 block content
     section.intro
-        form(method="POST")
-            input(placeholder="name", name = "name", type="text", required)
-            input(type="submit", value = "enter")
-        a(href="")
-            button#showBtn press
-        br
-        a(href="/show")
-            button go to show
-        a(href="/cert")
-            button go to cert
+        form(method="POST")#nameContainer
+            input(placeholder="이름을 입력해주세요", name = "name", type="text", required)#nameInput
+            input(type="submit", value = "확인")
 
     include partials/socket
     script(src="/assets/js/home.js")

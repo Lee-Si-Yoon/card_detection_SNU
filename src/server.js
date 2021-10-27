@@ -1,8 +1,14 @@
 import "regenerator-runtime";
+import "dotenv/config";
+
+import "./db";
+import "./models/Graduate";
+
 import express from "express";
 import morgan from "morgan";
 import http from "http";
 import path from "path";
+
 import { Server } from "socket.io";
 import { instrument } from "@socket.io/admin-ui";
 import { resolveAny } from "dns";
@@ -11,13 +17,23 @@ const __dirname = path.resolve();
 const app = express();
 const logger = morgan("dev");
 
+import Graduate from "./models/Graduate";
+
 const getHome = (req, res) => {
   const pageTitle = "Home";
   return res.render("home", { pageTitle: "Home" });
 };
-const postHome = (req, res) => {
+const postHome = async (req, res) => {
   const { name } = req.body;
-  console.log(name);
+  try {
+    await Graduate.create({
+      name: name,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.redirect("/");
+  }
+
   return res.redirect("/cert");
 };
 
@@ -45,9 +61,6 @@ instrument(wsServer, {
 wsServer.on("connection", (socket) => {
   socket.onAny((event) => {
     console.log(`🖕 Socket Event: ${event}`);
-  });
-  socket.on("show_btn", () => {
-    wsServer.sockets.emit("showBtnHit");
   });
   socket.on("new_message", (msg) => {
     wsServer.sockets.emit("show_message", msg);

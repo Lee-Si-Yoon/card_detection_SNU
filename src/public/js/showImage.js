@@ -25,9 +25,7 @@ function getRandomImage() {
   setTimeout(function () {
     btn_container.classList.add("hide");
   }, 3000);
-  setTimeout(function () {
-    //btn_container.style.display = "none";
-  }, 4000);
+  location.reload();
 }
 
 socket.on("show_message", getRandomImage);

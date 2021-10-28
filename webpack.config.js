@@ -9,7 +9,6 @@ module.exports = {
     app: BASE_JS + "app.js",
     showImage: BASE_JS + "showImage.js",
     home: BASE_JS + "home.js",
-    cert: BASE_JS + "cert.js",
     generate: BASE_JS + "generate.js",
   },
   //mode: "development", //only on dev mode

@@ -20,7 +20,6 @@ const logger = morgan("dev");
 import Graduate from "./models/Graduate";
 
 const getHome = (req, res) => {
-  const pageTitle = "Home";
   return res.render("home", { pageTitle: "Home" });
 };
 
@@ -77,5 +76,5 @@ wsServer.on("connection", (socket) => {
 
 const PORT = process.env.PORT || 4000;
 const handleListen = () =>
-  console.log(`🚀 Listening on http://localhost:${port}`);
+  console.log(`🚀 Listening on http://localhost:${PORT}`);
 httpServer.listen(PORT, handleListen);

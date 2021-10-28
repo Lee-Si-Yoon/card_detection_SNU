@@ -75,7 +75,7 @@ wsServer.on("connection", (socket) => {
   });
 });
 
-const port = 4000;
+const PORT = process.env.PORT || 4000;
 const handleListen = () =>
   console.log(`🚀 Listening on http://localhost:${port}`);
-httpServer.listen(port, handleListen);
+httpServer.listen(PORT, handleListen);

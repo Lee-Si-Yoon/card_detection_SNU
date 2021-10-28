@@ -1,10 +1,11 @@
 extends base
 
 block content
-    div#img_container
-        img#img_shower(width = "1000px", class= "blur")
-    div#btn_container(class = "blur")
-        p 나를 실망시키지 말아라...
+    div.show__container
+        div#img_container.img_shower
+            img#img_shower.blur
+        div#btn_container.btn_container
+            p 나를 실망시키지 말아라...
     
     include partials/socket
     script(src="/assets/js/showImage.js")

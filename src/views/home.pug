@@ -5,6 +5,7 @@ block content
         form(method="POST")#nameContainer
             input(placeholder="이름을 입력해주세요", name = "name", type="text", required)#nameInput
             input(type="submit", value = "확인")
+            p #{errorMessage}
 
     include partials/socket
     script(src="/assets/js/home.js")

@@ -1,6 +1,7 @@
 .hide {
-  display: hidden;
-  color: aqua;
+  filter: blur(10px);
+  transition: all 1.5s;
+  visibility: hidden;
 }
 
 .blur {

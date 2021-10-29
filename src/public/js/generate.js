@@ -5,14 +5,14 @@ import { TickerPlugin } from "@pixi/ticker";
 Application.registerPlugin(TickerPlugin);
 import { AppLoaderPlugin } from "@pixi/loaders";
 Application.registerPlugin(AppLoaderPlugin);
-//import * as PIXI from "@pixi/app";
 import { Application } from "@pixi/app";
 import { Sprite } from "@pixi/sprite";
 import { Rectangle } from "@pixi/math";
 
 const app = new Application({
-  width: window.innerWidth,
-  height: window.innerHeight,
+  resizeTo: window,
+  //width: window.innerWidth,
+  //height: window.innerHeight,
   backgroundColor: 0x104ea9,
   resolution: window.devicePixelRatio || 1,
 });

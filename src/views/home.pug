@@ -2,10 +2,14 @@ extends base
 
 block content
     section.intro
-        form(method="POST")#nameContainer
-            input(placeholder="이름을 입력해주세요", name = "name", type="text", required)#nameInput
-            input(type="submit", value = "확인")
-            p #{errorMessage}
+        section.home
+            h1 서울대학교 졸업을 진심으로 축하합니다
+            h4 졸업증을 발부하기 위해 성함을 입력해주십시오
+            form(method="POST")#nameContainer
+                if errorMessage
+                    p.errorMessage 이름이 중복됩니다. 동명이인일 경우 이름 옆에 숫자를 붙여주세요
+                input(placeholder="ex) 이시윤", name = "name", type="text", required)#nameInput
+                input(type="submit", value = "졸업하기")            
 
     include partials/socket
     script(src="/assets/js/home.js")

@@ -1,0 +1,43 @@
+.intro {
+  display: flex;
+  position: relative;
+  .home {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    max-width: 800px;
+    width: 70%;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.8rem;
+    padding: 50px 70px;
+    filter: drop-shadow(50px);
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    h4 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      input {
+        max-height: 80px;
+        min-height: 30px;
+        margin-bottom: 5px;
+      }
+      input:last-child {
+        border: none;
+        background-color: #104ea9;
+        color: white;
+        padding: 10px 0;
+      }
+    }
+  }
+}

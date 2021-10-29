@@ -2,8 +2,29 @@ extends base
 
 block content
     div#certContainer
-        p #{name}
-        p 내용
+        h1 졸업증서
+        h2 #{name}
+        p 그럼에도 위 사람은 소정의 과정을 이수하고 규정된 시험에 합격하여 서울대인의 명예를 갖추었으므로 이를 인정함.
+        span 2021년
+
+        img(src="/assets/imgs/printpic.webp", alt="stamp")
+        p 파란색 쫄쫄이
+        br
+        span 미스터 스누
+
+        h2 위의 인정에 의하여 이 증서를 수여함
+        span 2021년
+
+        img(src="/assets/imgs/printpic.webp", alt="stamp")
+        p 파란색 쫄쫄이를 잃어버린
+        br
+        span 미스터 스누
+
+        img(src="/assets/imgs/snu_logo.webp", alt="")
+
+        span 학위번호
+
+
     a(href="../")
         btn 돌아가기
     include partials/socket

@@ -10,7 +10,8 @@ import { Sprite } from "@pixi/sprite";
 import { Rectangle } from "@pixi/math";
 
 const app = new Application({
-  resizeTo: window,
+  autoResize: true,
+  //resizeTo: window,
   //width: window.innerWidth,
   //height: window.innerHeight,
   backgroundColor: 0x104ea9,
@@ -78,3 +79,16 @@ app.ticker.add(() => {
     }
   }
 });
+
+window.addEventListener("resize", resize);
+function resize() {
+  // Resize the renderer
+  app.renderer.resize(window.innerWidth, window.innerHeight);
+
+  // You can use the 'screen' property as the renderer visible
+  // area, this is more useful than view.width/height because
+  // it handles resolution
+  rect.position.set(app.screen.width, app.screen.height);
+}
+
+resize();

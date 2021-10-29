@@ -18,7 +18,7 @@ img_shower.addEventListener("load", () => {
   img_shower.style.display = "block";
 });
 
-//btn_container.style.display = "none";
+btn_container.style.display = "none";
 function getRandomImage() {
   //unload.style.display = "none";
   btn_container.style.display = "flex";

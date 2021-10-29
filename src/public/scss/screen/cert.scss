@@ -1,0 +1,106 @@
+.cert__back {
+  background-color: #eee;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#certContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 400px;
+  width: 95%;
+  min-height: 700px;
+  background-color: white;
+  filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.2));
+  border-radius: 0.7rem;
+  .cert__date {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 20px;
+  }
+  .cert__name {
+    text-align: center;
+    margin-bottom: 55px;
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgba(151, 163, 175, 1);
+      letter-spacing: 1rem;
+      margin-top: 100px;
+      margin-bottom: 50px;
+    }
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      letter-spacing: 0.4rem;
+    }
+  }
+  .cert__congrats {
+    width: 80%;
+    margin-bottom: 80px;
+    p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 200%;
+    }
+  }
+  .cert__stamp {
+    width: 80%;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 100px;
+    grid-template-rows: 100px;
+    grid-template-areas: "logo blank text stamp";
+    margin: 10px 0;
+    .cert__img {
+      grid-area: stamp;
+      width: 100px;
+    }
+    .cert__stamptext {
+      grid-area: text;
+      text-align: right;
+      padding-right: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      p {
+        margin-bottom: 8px;
+      }
+      span {
+        font-size: 1.2rem;
+        margin-bottom: 4px;
+      }
+    }
+    .cert__logo {
+      grid-area: logo;
+      max-width: 250px;
+      min-width: 100px;
+      align-self: flex-end;
+      justify-self: flex-start;
+      position: absolute;
+      left: 60px;
+      bottom: 20px;
+    }
+  }
+  .cert__grats {
+    margin-top: 30px;
+    margin-bottom: 80px;
+  }
+  .cert__number {
+    font-size: 0.5rem;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+}
+.back {
+  padding: 10px 20px;
+  font-size: 2rem;
+  color: white;
+  background-color: #104ea9;
+  margin-top: 50px;
+}

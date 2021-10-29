@@ -1,0 +1,48 @@
+.show__container {
+  height: 100vh;
+  max-width: auto;
+  .img_shower {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    #img_shower {
+      min-height: 400px;
+      max-height: 100vh;
+      width: auto;
+    }
+    #unload {
+      min-height: 400px;
+      max-height: 100vh;
+      width: auto;
+      position: absolute;
+    }
+  }
+}
+
+.btn_container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    font-weight: 600;
+    font-size: 3rem;
+  }
+}
+
+.hide {
+  filter: blur(10px);
+  transition: all 3s;
+}
+
+.blur {
+  filter: blur(10px);
+  transition: all 1.5s;
+}
+
+.noBlur {
+  transition: all 1s;
+}

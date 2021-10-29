@@ -1,7 +1,7 @@
 const socket = io();
 
-const img = document.images[0];
-const bigImg = document.createElement("img");
+const unload = document.querySelector("#unload");
+const img_shower = document.querySelector("#img_shower");
 const btn_container = document.querySelector("#btn_container");
 
 import img1 from "../imgs/snuman.webp";
@@ -10,22 +10,24 @@ import img3 from "../imgs/snu_logo.png";
 import img4 from "../imgs/top_dude.png";
 //import img3 from "../imgs/3.jpg";
 
-bigImg.onload = function () {
-  img.src = this.src;
-  img.className = "noBlur";
-};
-setTimeout(function () {
-  bigImg.src = "/assets/imgs/snuman.webp";
-}, 50);
+img_shower.style.display = "none";
+
+img_shower.addEventListener("load", () => {
+  unload.style.display = "none";
+  img_shower.style.display = "block";
+});
 
 btn_container.style.display = "none";
 
 function getRandomImage() {
   btn_container.style.display = "flex";
+  img_shower.style.display = "none";
   setTimeout(function () {
     btn_container.classList.add("hide");
-  }, 3000);
-  location.reload();
+  }, 5000);
+  setTimeout(() => {
+    location.reload();
+  }, 1000);
 }
 
 socket.on("show_message", getRandomImage);

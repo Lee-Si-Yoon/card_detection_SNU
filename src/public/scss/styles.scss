@@ -4,6 +4,8 @@
 
 // Screens
 @import "./screen/home.scss";
+@import "./screen/show.scss";
+@import "./screen/cert.scss";
 
 // Defaults
 .footer {
@@ -26,39 +28,8 @@ main {
   width: 100%;
   margin: 0 auto;
 }
+
 .errorMessage {
   font-size: 0.8rem;
   padding: 10px 0;
-}
-
-.show__container {
-  position: relative;
-  width: 100vw;
-  height: 100%;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.img_shower {
-  max-width: 1200px;
-  min-width: 400px;
-  border: 1px solid red;
-  img {
-    max-width: 100%;
-  }
-}
-
-.btn_container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  p {
-    font-weight: 600;
-    font-size: 3rem;
-  }
 }

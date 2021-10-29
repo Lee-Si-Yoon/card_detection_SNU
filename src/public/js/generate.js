@@ -22,7 +22,7 @@ intro.appendChild(app.view);
 
 const aliens = [];
 
-const totalDudes = 10;
+const totalDudes = 6;
 
 for (let i = 0; i < totalDudes; i++) {
   // create a new Sprite that uses the image name that we just generated as its source
@@ -30,7 +30,7 @@ for (let i = 0; i < totalDudes; i++) {
   // set the anchor point so the texture is centerd on the sprite
   dude.anchor.set(0.5);
   // set a random scale for the dude - no point them all being the same size!
-  dude.scale.set(0.3 + Math.random() * 0.3);
+  dude.scale.set(0.1 + Math.random() * 0.8);
   // finally lets set the dude to be at a random position..
   dude.x = Math.random() * app.screen.width;
   dude.y = Math.random() * app.screen.height;

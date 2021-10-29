@@ -1,31 +1,36 @@
 extends base
 
 block content
-    div#certContainer
-        h1 졸업증서
-        h2 #{name}
-        p 그럼에도 위 사람은 소정의 과정을 이수하고 규정된 시험에 합격하여 서울대인의 명예를 갖추었으므로 이를 인정함.
-        span 2021년
+    div.cert__back
+        div#certContainer
+            div.cert__name
+                h1 졸업증서
+                h2 #{name}
+            div.cert__congrats
+                p 위 사람은 소정의 과정을 이수하고 규정된 시험에 합격하여 서울대인의 명예를 갖추었으므로 이를 인정함.
+            
+            span.cert__date 2021년
 
-        img(src="/assets/imgs/printpic.webp", alt="stamp")
-        p 파란색 쫄쫄이
-        br
-        span 미스터 스누
+            div.cert__stamp
+                img.cert__img(src="/assets/imgs/printpic.webp", alt="stamp")
+                div.cert__stamptext
+                    div.n
+                    p 파란색 쫄쫄이
+                    span 미스터 스누
 
-        h2 위의 인정에 의하여 이 증서를 수여함
-        span 2021년
+            h2.cert__grats 위의 인정에 의하여 이 증서를 수여함
+            span.cert__date 2021년
+            
+            div.cert__stamp
+                img.cert__img(src="/assets/imgs/printpic.webp", alt="stamp")
+                div.cert__stamptext
+                    p 파란색 쫄쫄이를 잃어버린
+                    span 미스터 스누
+                img.cert__logo(src="/assets/imgs/snu_logo.webp", alt="logo")
 
-        img(src="/assets/imgs/printpic.webp", alt="stamp")
-        p 파란색 쫄쫄이를 잃어버린
-        br
-        span 미스터 스누
+            span.cert__number 학위번호
 
-        img(src="/assets/imgs/snu_logo.webp", alt="")
-
-        span 학위번호
-
-
-    a(href="../")
-        btn 돌아가기
+        a.back(href="../")
+            btn 돌아가기
     include partials/socket
     //-script(src="/assets/js/cert.js")
